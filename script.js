@@ -181,6 +181,43 @@ const optimizedScroll = () => {
 
 window.addEventListener('scroll', optimizedScroll, { passive: true });
 
+// ===== Theme Toggle =====
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = document.getElementById('theme-icon');
+const htmlElement = document.documentElement;
+
+// Get saved theme or default to light
+const getTheme = () => {
+    const savedTheme = localStorage.getItem('theme');
+    return savedTheme || 'light';
+};
+
+// Set theme
+const setTheme = (theme) => {
+    htmlElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    
+    // Update icon
+    if (theme === 'dark') {
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+    } else {
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+    }
+};
+
+// Initialize theme on page load
+const currentTheme = getTheme();
+setTheme(currentTheme);
+
+// Toggle theme on button click
+themeToggle.addEventListener('click', () => {
+    const currentTheme = htmlElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+});
+
 // ===== Console Message =====
 console.log('%c👋 Hello! Thanks for checking out my portfolio!', 'color: #6366f1; font-size: 16px; font-weight: bold;');
 console.log('%cWant to collaborate? Reach out!', 'color: #818cf8; font-size: 12px;');

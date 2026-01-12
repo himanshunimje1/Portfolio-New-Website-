@@ -16,6 +16,24 @@
     --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
+/* ===== CSS Variables - Dark Theme ===== */
+[data-theme="dark"] {
+    --primary-color: #818cf8;
+    --primary-dark: #6366f1;
+    --primary-light: #a5b4fc;
+    --accent-color: #f472b6;
+    --text-primary: #f9fafb;
+    --text-secondary: #d1d5db;
+    --bg-primary: #111827;
+    --bg-secondary: #1f2937;
+    --bg-tertiary: #374151;
+    --border-color: #374151;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.4);
+    --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
 /* ===== Reset & Base Styles ===== */
 * {
     margin: 0;
@@ -52,6 +70,10 @@ body {
     padding: 1rem 0;
     box-shadow: var(--shadow-sm);
     transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .navbar {
+    background: rgba(17, 24, 39, 0.95);
 }
 
 .navbar.scrolled {
@@ -129,6 +151,10 @@ body {
     justify-content: center;
     padding: 8rem 2rem 4rem;
     background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+}
+
+[data-theme="dark"] .hero {
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
 }
 
 .hero-content {
@@ -794,6 +820,16 @@ section {
 
     .nav-menu.active {
         left: 0;
+    }
+
+    .theme-toggle-container {
+        margin-right: 0.5rem;
+    }
+
+    .theme-toggle {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
     }
 
     .nav-toggle {
