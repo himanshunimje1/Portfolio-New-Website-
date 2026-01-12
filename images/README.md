@@ -4,10 +4,12 @@ Add your images to this folder:
 
 ## Required Images
 
-1. **profile.jpg** (or .png)
-   - Your profile/headshot photo
-   - Recommended size: 600x600px or larger (square aspect ratio)
-   - Will be displayed in the About section
+1. **profile.jpg** (or .png) ⭐ REQUIRED
+   - Your professional profile/headshot photo
+   - **Recommended:** Professional photo with suit/business attire
+   - Recommended size: 600x600px or larger (square aspect ratio preferred)
+   - Will be displayed prominently in the About section
+   - Should be high quality, well-lit, and professional
 
 2. **project-1.jpg** (or .png)
    - Screenshot/image for "E-Commerce Platform" project
