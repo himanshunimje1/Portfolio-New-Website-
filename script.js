@@ -86,7 +86,7 @@ const animateElements = document.querySelectorAll('.skill-card, .project-card, .
 animateElements.forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    el.style.transition = 'opacity 1.2s ease-out, transform 1.2s ease-out';
     observer.observe(el);
 });
 
@@ -112,19 +112,19 @@ if (contactForm) {
             position: fixed;
             top: 100px;
             right: 20px;
-            background: #6366f1;
+            background: #0176D3;
             color: white;
             padding: 1rem 2rem;
             border-radius: 12px;
             box-shadow: 0 4px 16px rgba(0,0,0,0.2);
             z-index: 10000;
-            animation: slideIn 0.3s ease;
+            animation: slideIn 0.8s ease-out;
         `;
         document.body.appendChild(successMsg);
         
         setTimeout(() => {
-            successMsg.style.animation = 'slideOut 0.3s ease';
-            setTimeout(() => successMsg.remove(), 300);
+            successMsg.style.animation = 'slideOut 0.8s ease-in';
+            setTimeout(() => successMsg.remove(), 800);
         }, 3000);
         
         // Reset form
@@ -186,10 +186,10 @@ const themeToggle = document.getElementById('theme-toggle');
 const themeIcon = document.getElementById('theme-icon');
 const htmlElement = document.documentElement;
 
-// Get saved theme or default to light
+// Get saved theme or default to dark
 const getTheme = () => {
     const savedTheme = localStorage.getItem('theme');
-    return savedTheme || 'light';
+    return savedTheme || 'dark';
 };
 
 // Set theme
@@ -219,5 +219,5 @@ themeToggle.addEventListener('click', () => {
 });
 
 // ===== Console Message =====
-console.log('%c👋 Hello! Thanks for checking out my portfolio!', 'color: #6366f1; font-size: 16px; font-weight: bold;');
-console.log('%cWant to collaborate? Reach out!', 'color: #818cf8; font-size: 12px;');
+console.log('%c👋 Hello! Thanks for checking out my portfolio!', 'color: #0176D3; font-size: 16px; font-weight: bold;');
+console.log('%cWant to collaborate? Reach out!', 'color: #1589EE; font-size: 12px;');

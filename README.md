@@ -87,9 +87,10 @@ The color scheme can be customized in `styles.css` by modifying the CSS variable
 
 ```css
 :root {
-    --primary-color: #6366f1;
-    --secondary-color: #8b5cf6;
-    --accent-color: #ec4899;
+    --primary-color: #0176D3;
+    --primary-dark: #014486;
+    --primary-light: #1589EE;
+    --accent-color: #0176D3;
     /* ... */
 }
 ```
