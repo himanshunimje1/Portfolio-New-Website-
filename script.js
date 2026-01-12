@@ -76,7 +76,11 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.style.transform = 'translate3d(0, 0, 0)';
+            // Remove will-change after animation to improve performance
+            setTimeout(() => {
+                entry.target.style.willChange = 'auto';
+            }, 1200);
         }
     });
 }, observerOptions);
@@ -85,8 +89,11 @@ const observer = new IntersectionObserver((entries) => {
 const animateElements = document.querySelectorAll('.skill-card, .project-card, .experience-item, .stat-card');
 animateElements.forEach(el => {
     el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
+    el.style.transform = 'translate3d(0, 30px, 0)';
     el.style.transition = 'opacity 1.2s ease-out, transform 1.2s ease-out';
+    el.style.willChange = 'opacity, transform';
+    el.style.backfaceVisibility = 'hidden';
+    el.style.webkitBackfaceVisibility = 'hidden';
     observer.observe(el);
 });
 
